@@ -1,0 +1,13 @@
+"make_n_run.sh" called "msms_recomb.py". It was designed to be run on CHTC and automatically submit jobs. There are more efficient ways to do this, though.
+
+"msms_recomb.py" is called to randomly generate commands based on recombination rate bins. It will create executable files and a submit file to be ran on CHTC with HTCondor. Example executable file "ms_rec_0.sh" is available here as well.
+
+"ms_rec_0.sh" example executable file, used on CHTC to run ms with random window sizes and recombination rate and then to calculate FST for all the pairwise populations using "ms_fst_chtc_minAlleleFreq_targetN.py".
+
+"ms_fst_chtc_minAlleleFreq_targetN.py" used to calculate pairwise FST for all the populations in a simulation. It requires target sample sizes, which can be downsampled from the simulated number to match the empirical sample sizes against which the simulated data will be compared. Some details can be found on comments at the beginning of the script and on the scripts above that call it.
+
+"fst_pvalue.py" calculated pvalue based for FST_MaxSNP and FST_Window, based on the calculate FST values for simulated and/or empirical data. It will call functions from "ribeiro_popgen.py" and "snpfst_funcs.py".
+
+"ribeiro_popgen.py" and "snpfst_funcs.py" have some functions that will be called on fst_pvalue.py.
+
+"emp_fst_default.py" is used to calculate FST from empirical data, downsampled with counts that match the ones used for simulated data as well.
